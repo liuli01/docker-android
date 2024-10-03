@@ -125,7 +125,7 @@ class Emulator(Device):
             self._add_profile()
             creation_cmd = "avdmanager create avd -f -n {n} -b {it}/{si} " \
                            "-k 'system-images;android-{al};{it};{si}' " \
-                           "-d {d} -p {pe}".format(n=self.name, it=self.img_type, si=self.sys_img,
+                           "-d {d} -p {pe} -read-only".format(n=self.name, it=self.img_type, si=self.sys_img,
                                                    al=self.api_level, d=self.device.replace(" ", "\ "),
                                                    pe=self.path_emulator)
             self.logger.info(f"Command to create emulator: '{creation_cmd}'")
